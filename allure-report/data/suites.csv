@@ -1,0 +1,5 @@
+"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
+"passed","Thu Feb 22 21:15:05 ICT 2024","Thu Feb 22 21:15:05 ICT 2024","1","","Swag Labs - Login: As a ""standard_user"", I want to log in successfully","","","","",""
+"passed","Thu Feb 22 21:15:05 ICT 2024","Thu Feb 22 21:15:05 ICT 2024","56","","Swag Labs - Login: As a ""standard_user"", I want to log in successfully","","","","Then I should see home page",""
+"passed","Thu Feb 22 21:15:05 ICT 2024","Thu Feb 22 21:15:05 ICT 2024","501","","Swag Labs - Login: As a ""standard_user"", I want to log in successfully","","","","When I login with ""standard_user"" credential",""
+"passed","Thu Feb 22 21:15:03 ICT 2024","Thu Feb 22 21:15:05 ICT 2024","1664","","Swag Labs - Login: As a ""standard_user"", I want to log in successfully","","","","Given I am on the login page",""
