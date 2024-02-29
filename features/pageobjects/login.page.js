@@ -6,8 +6,7 @@ class LoginPage extends Page {
     get fieldUsername () { return $('#user-name'); }
     get fieldPassword () { return $('#password'); }
     get buttonLogin () { return $('#login-button'); }
-    get errorLockedOutUser () { return $('//h3[text()="Epic sadface: Sorry, this user has been locked out."]') }
-    
+    errorUser = (dynamicMassage) => { return $(`//h3[text()="${dynamicMassage}"]`) }
 
     async login (username) {
         await this.fieldUsername.waitForDisplayed({ timeout: 50000 });
@@ -15,10 +14,16 @@ class LoginPage extends Page {
         await this.fieldPassword.setValue(process.env.PASSWORD_SAUCEDEMO);
         await this.buttonLogin.click();
     }
+    async blankPassword(username) {
+        await this.fieldUsername.waitForDisplayed({ timeout: 50000 });
+        await this.fieldUsername.setValue(username);
+        await this.fieldPassword.setValue("");
+        await this.buttonLogin.click();
+    }
 
-    async validateLockedOutUserError () {
-        await this.errorLockedOutUser.waitForDisplayed({ timeout: 2500 });
-        await expect(this.errorLockedOutUser).toBeDisplayed()
+    async validateErrorUser (message) {
+        await this.errorUser(message).waitForDisplayed({ timeout: 30000 });
+        await expect(this.errorUser(message)).toBeDisplayed()
     }
 
     open () {
